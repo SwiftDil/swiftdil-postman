@@ -21,13 +21,13 @@ Setting up an environment allows us to easily use environmental variables, which
 
 **Create customer → Update Customer → Screen Customer → View Risk Profile**.
 
-To make it easier for you, we have created a [Sandbox environment](colllections/swiftdil-sandbox-postman-environment.json) which can easily be imported. To do so, click on **Environment Options** (cog icon), then click on **Manage Environments**.
+To make it easier for you, we have created a [Sandbox environment](/colllections/swiftdil-sandbox-postman-environment.json) which can easily be imported. To do so, click on **Environment Options** (cog icon), then click on **Manage Environments**.
 
 <p align="center">
   <img src="images/new-env-1.png" width="50%" height="70%">
 </p>
 
-Select the **Manage Environments** tab, then click import and select the [Sandbox environment](/master/colllections/swiftdil-sandbox-postman-environment.json).
+Select the **Manage Environments** tab, then click import and select the [Sandbox environment](/colllections/swiftdil-sandbox-postman-environment.json).
 
 <p align="center">
   <img src="images/new-env-2.png" width="50%" height="70%">
@@ -50,9 +50,9 @@ You are now ready to import the collection.
 # Collections
 Postman collections allow the grouping of API calls and thus automate the process of using our platform. We provide a couple of official Postman collections to help you get started testing as soon as possible:
 
-* **[The Demo Collection](../blob/master/collections/swiftdil-demo.json)** is designed to provide you with a quick overview of the SwiftDil API using a set of scenario-cratfed API calls. 
+* **[The Demo Collection](/collections/swiftdil-demo.json)** is designed to provide you with a quick overview of the SwiftDil API using a set of scenario-cratfed API calls. 
 
-* **[The API Collection](../blob/master/collections/swiftdil-api.json)** is designed to provide you with a quick template for all available SwiftDil API calls 
+* **[The API Collection](/collections/swiftdil-api.json)** is designed to provide you with a quick template for all available SwiftDil API calls 
 
 To import our official Postman collections, click on the **Import** button in the top left corner, then select **Import File** tab.
 
@@ -60,7 +60,7 @@ To import our official Postman collections, click on the **Import** button in th
   <img src="images/swiftdil-collections-import.png" width="40%" height="50%">
 </p>
 
-Then, select **Choose Files** and import the [Demo](/collections/swiftdil-demo.json) and [API](./collections/swiftdil-demo.json) collections.Once imported, you should be able to see both collections under the Collections tab.
+Then, select **Choose Files** and import the [Demo](/collections/swiftdil-demo.json) and [API](/collections/swiftdil-demo.json) collections.Once imported, you should be able to see both collections under the Collections tab.
 
 <p align="center">
   <img src="images/swiftdil-collections-screenshot.png" width="80%" height="80%">
