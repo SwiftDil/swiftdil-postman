@@ -1,0 +1,22 @@
+{
+  "id": "f84bc0ee-5d66-41b2-038a-95b9db1637cb",
+  "name": "swiftdil-sandbox (sandbox.swiftdil.com)",
+  "values": [
+    {
+      "enabled": true,
+      "key": "swiftdil_url",
+      "value": "https://sandbox.swiftdil.com/v1",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "accessTokenUser",
+      "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZSkFNbVhreTlsamxNTGo0V2dVU2UwQ0NLQ1RjUnU5c1prM1FfVHBZZXhRIn0.eyJqdGkiOiJlOTlmMTliMi0wMTVlLTQzZDQtYTA0YS05ODA4NTY0OWVkZjgiLCJleHAiOjE1MTczNDM2OTMsIm5iZiI6MCwiaWF0IjoxNTE3MzQwMDkzLCJpc3MiOiJodHRwOi8va2V5Y2xvYWs6ODA4MC9hdXRoL3JlYWxtcy9zd2lmdGRpbCIsImF1ZCI6ImJhYW54LWRlbW8iLCJzdWIiOiJhNjJhZTU1My1kM2Q0LTRkYmMtOWJiOS0yYmZlZDcwNWUyYTIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJiYWFueC1kZW1vIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiZmJmYjkxYWItNTk0MC00Y2UwLWI2YTUtMGI1YTQ2ZjE1YzEwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0KiIsImh0dHA6Ly9zYW5kYm94LnN3aWZ0ZGlsLmNvbSoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwiY2xpZW50SWQiOiJiYWFueC1kZW1vIiwiY2xpZW50SG9zdCI6IjE3Mi4xOC4wLjkiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtYmFhbngtZGVtbyIsImNsaWVudEFkZHJlc3MiOiIxNzIuMTguMC45IiwiZW1haWwiOiJzZXJ2aWNlLWFjY291bnQtYmFhbngtZGVtb0BwbGFjZWhvbGRlci5vcmcifQ.a8llNqhF10e2ZXRcmMBEfVVoXeWSl5MJeRqZ2FmoLFwmObS0sQYh7p5Gbp_4WxsqBu-6yCrf3CC_Goj9sJRSllCqkGezJ7c7tzIMdpBQLNsS2y6SkQ-URQUctex52j0odrBVajoVx2YkVpCgRbCMKPRTmD1r12gzQDKxn5fer3nMsDzUQVp9HNOKkWqoC2USeEvfxdZyVFK0tyoYBJS1_-se3qi3XrXaVvQumEHWHlZOLZgsY2smod9NrYWOe-TEC-rwAVzRl4KBk_l5Dilsn6sf4_gJ2GIemIagmq4rBYRzLA4I-p34iqjTo1IiXi4nvE5qLSaEp_znhHo4IjbGvQ",
+      "type": "text"
+    }
+  ],
+  "timestamp": 1517340093569,
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2018-01-30T19:25:33.007Z",
+  "_postman_exported_using": "Postman/5.5.2"
+}
