@@ -5,9 +5,9 @@ Our API endeavours to adhere to RESTfull principles and returns JSON for all res
 
 We designed our API demo to run with Postman, a REST client which helps making API calls with ease. We used Version 5.2.0 of Postman for this guide. However, the steps described below should be compatible with earlier or later Postman versions.
 
-In order to use the API demo, you **must obtain Sandbox API credetials** by completing the [Sandbox Access Form](https://www.swiftdil.com/#sandbox) on our website.
+In order to use the API demo, you **must obtain Sandbox API Credentials** by completing the [Sandbox Access Form](https://www.swiftdil.com/#sandbox) on our website.
 
-PS. Please consult our [step-by-step guide](https://docs.swiftdil.com), should you need a quick walkthrough of the capabilites of our API.
+PS. We recommend that you consult our [step-by-step guide](https://docs.swiftdil.com) as it provides a quick walkthrough of the capabilites of our API.
 
 # Postman Setup
 To download Postman, simply follow the instructions found in [GetPostman.com](https://GetPostman.com).
