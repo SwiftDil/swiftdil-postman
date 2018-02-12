@@ -3,7 +3,7 @@ The [SwiftDil](https://www.swiftdil.com) API is designed for businesses that wou
 
 Our API endeavours to adhere to RESTfull principles and returns JSON for all responses including errors. For further information on the API, please refer to our [API Reference](https://reference.swiftdil.com).
 
-We designed our API demo to run with Postman, a REST client which helps making API calls with ease. We used Version 5.2.0 of Postman for this guide. However, the steps described below should be compatible with earlier or later Postman versions.
+We designed our API demo to run with **Postman**, a REST client which helps making API calls with ease. We used Version 5.2.0 of Postman for this guide. However, the steps described below should be compatible with earlier or later Postman versions.
 
 In order to use the API demo, you **must obtain Sandbox API Credentials** by completing the [Sandbox Access Form](https://www.swiftdil.com/#sandbox) on our website.
 
@@ -112,7 +112,7 @@ The screenshot below shows the REST JSON response for newly-created customer alo
   <img src="images/postman-created-customer.png" width="80%" height="80%">
 </p>
 
-In the same fasion as with the **Authenticate** call, you will notice that there is a script under the **Tests** tab which saves the customer `id` into a postman variable called `customer_1_id`:
+In the same fashion as with the **Authenticate** call, you will notice that there is a script under the **Tests** tab which saves the customer `id` into a postman variable called `customer_1_id`:
 
 ```js
 if (responseCode.code === 201) {
@@ -121,7 +121,7 @@ if (responseCode.code === 201) {
 }
 ```
 
-Saving Postman variables in this way is a partten we follow for the subsequent AP calls but will be ommitted from this point onwards for brevity.
+Saving Postman variables in this way is a pattern we follow for the subsequent API calls but will be ommitted from this point onwards for brevity.
 
 ## Screen Customer
 
