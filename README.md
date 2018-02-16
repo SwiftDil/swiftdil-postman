@@ -18,7 +18,7 @@ To download Postman, simply follow the instructions found in [GetPostman.com](ht
   <img src="images/postman.png" width="80%" height="80%">
 </p>
 
-# Envirenment Setup
+# Environment Setup
 Setting up an environment allows us to easily use environmental variables, which make calling to the API easier, and quicker e.g. reusing resource IDs when running sequential API calls such as:
 
 **Create customer → Update Customer → Screen Customer → View Risk Profile**.
@@ -29,25 +29,25 @@ To make it easier for you, we have created a [Sandbox environment](/colllections
   <img src="images/new-env-1.png" width="50%" height="70%">
 </p>
 
-Select the **Manage Environments** tab, then click import and select the [Sandbox environment](/colllections/swiftdil-sandbox-postman-environment.json).
+Select the **Manage Environments** tab, then click **Import** and select the [Sandbox environment](/colllections/swiftdil-sandbox-postman-environment.json).
 
 <p align="center">
   <img src="images/new-env-2.png" width="50%" height="70%">
 </p>
 
-Your environment is now ready.
+The Sandbox environment is now ready to be used.
 
 <p align="center">
   <img src="images/new-env-3.png" width="50%" height="70%">
 </p>
 
-To use the Sandbox environment, close the **Manage Environment** window, then select the `swiftdil-sandbox` from the **Environment** dropdown.
+To use the Sandbox environment, close the **Manage Environment** window, then select `swiftdil-sandbox` from the **Environment** dropdown.
 
 <p align="center">
   <img src="images/new-env-4.png" width="50%" height="70%">
 </p>
 
-You are now ready to import the collection.
+Next step is to import SwiftDil's official Postman collections.
 
 # Collections
 Postman collections allow the grouping of API calls and thus automate the process of using our platform. We provide a couple of official Postman collections to help you get started testing as soon as possible:
@@ -73,7 +73,7 @@ Then, select **Choose Files** and import the [Demo](/collections/swiftdil-demo.j
 Using Postman with the SwiftDil API is similar to making manual HTTP requests e.g. using [cURL](https://curl.haxx.se), only easier. 
 
 ## Authenticate
-Before you can use the API, you need to authenticate yourself. The API will validate your clientid/username and API key, and return an authentication token if you are successfully authenticated. This token will need to be sent in the header of all subsequent calls to the API.
+Before you can use our API, you need to authenticate yourself. The API will validate your clientid/username and API key, and return an access token if you are successfully authenticated. This token will need to be sent in the header of all subsequent calls to the API.
 
 We have created an environment variable (i.e. `accessTokenUser`) to hold the token for you. 
 
