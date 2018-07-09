@@ -1,0 +1,408 @@
+{
+	"info": {
+		"name": "Simple Demo Collection",
+		"_postman_id": "bb76fcba-8cc9-7e81-050a-e8c72e0627f0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "misc",
+			"description": "In this folder you will find the rest enpoints which allow you to:\n - obtain your API token\n - list all the customer you created\n - delete them one by one to prevent you from having duplicate entries",
+			"item": [
+				{
+					"name": "Get API oauth2 token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fd658562-3929-4823-972d-93693551325f",
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"if (responseCode.code === 200) {",
+									"    var jd = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"accessTokenUser\", jd.access_token);",
+									"    postman.setEnvironmentVariable(\"gui\", \"{{$timestamp}}{{$randomInt}}\");",
+									"}",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": "",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": ""
+							}
+						],
+						"body": {},
+						"url": "{{swiftdil_url}}/oauth2/token",
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create Customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "67415f41-ed69-41eb-9bb9-b4aaa9438b09",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"if (responseCode.code === 201) {",
+							"    var jd = JSON.parse(responseBody);",
+							"    postman.setEnvironmentVariable(\"customer_1_id\", jd.id);",
+							"}",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessTokenUser}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"INDIVIDUAL\",\n    \"email\" : \"Beverley{{gui}}@McKinney.com\",\n    \"first_name\" : \"Beverley\",\n    \"last_name\" : \"McKinney\"\n}"
+				},
+				"url": "{{swiftdil_url}}/customers",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Document",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eaf46b01-1d6f-4209-b057-31e83cf8266b",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"if (responseCode.code === 201) {",
+							"    var jd = JSON.parse(responseBody);",
+							"    postman.setEnvironmentVariable(\"residence_permit_doc_id\", jd.id);",
+							"}",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessTokenUser}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "front_side",
+							"type": "file",
+							"src": "PERMIT_UK_FRONT.jpg"
+						},
+						{
+							"key": "back_side",
+							"type": "file",
+							"src": "PERMIT_UK_BACK.jpg"
+						},
+						{
+							"key": "type",
+							"value": "RESIDENCE_PERMIT",
+							"type": "text"
+						},
+						{
+							"key": "document_name",
+							"value": "residence permit",
+							"type": "text"
+						},
+						{
+							"key": "document_description",
+							"value": "residence permit",
+							"type": "text"
+						},
+						{
+							"key": "document_number",
+							"value": "ZU1234567",
+							"type": "text"
+						},
+						{
+							"key": "mrz_line1",
+							"value": "IRGBRZU12345673<<<<<<<<<<<<<<<",
+							"type": "text"
+						},
+						{
+							"key": "mrz_line2",
+							"value": "6608198F0808088COU<<<<<<<<<<<6",
+							"type": "text"
+						},
+						{
+							"key": "mrz_line3",
+							"value": "SAMPLE<<SUSANNA<<<<<<<<<<<<<<<",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{swiftdil_url}}/customers/{{customer_1_id}}/documents",
+				"description": "Upload attachment"
+			},
+			"response": []
+		},
+		{
+			"name": "Screen Customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"\r",
+							"if (responseCode.code === 201) {\r",
+							"    var jd = JSON.parse(responseBody);\r",
+							"    postman.setEnvironmentVariable(\"screening_1_id\", jd.id);\r",
+							"}\r",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessTokenUser}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t\"pep\",\n\t\"watchlist\",\n\t\"disqualified_entities\",\n\t\"adverse_media\"\n]"
+				},
+				"url": "{{swiftdil_url}}/customers/{{customer_1_id}}/screenings",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "View Matches",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5e1d1382-dab2-4453-b816-22a2be497719",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"if (responseCode.code === 200) {",
+							"    var jd = JSON.parse(responseBody);",
+							"    var matches2dismiss = \"\"",
+							"",
+							"    if (jd.content.length>1)",
+							"    {",
+							"        var i = 0",
+							"        var match = jd.content[i]",
+							"        tests[match.validation_result + \" confirmed match score -> \"+match.scorecard.overall_score + \" - \"+match.scorecard.breakdown[0].field_value] = true === true",
+							"        ",
+							"        postman.setEnvironmentVariable(\"match2confirm\", jd.content[i].id);",
+							"    }",
+							"",
+							"    for (i=1; i<jd.content.length; i++)",
+							"    {",
+							"        var match = jd.content[i]",
+							"        tests[match.validation_result + \" match \"+i+\" score -> \"+match.scorecard.overall_score + \" - \"+match.scorecard.breakdown[0].field_value] = true === true",
+							"        ",
+							"        if (matches2dismiss !== \"\")",
+							"            matches2dismiss = matches2dismiss +\",\\\"\"+ jd.content[i].id + \"\\\"\"",
+							"        else",
+							"            matches2dismiss = \"\\\"\"+ jd.content[i].id + \"\\\"\"",
+							"    }",
+							"    postman.setEnvironmentVariable(\"matches2dismiss\", matches2dismiss);",
+							"}",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessTokenUser}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t\"pep\",\n\t\"watchlist\", \n\t\"disqualified_directors\"\n]"
+				},
+				"url": "{{swiftdil_url}}/customers/{{customer_1_id}}/screenings/{{screening_1_id}}/matches",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Match",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessTokenUser}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "{{swiftdil_url}}/customers/{{customer_1_id}}/screenings/{{screening_1_id}}/matches/{{match2confirm}}/confirm",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Invalidate Other Matches",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessTokenUser}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{{matches2dismiss}}\n]"
+				},
+				"url": "{{swiftdil_url}}/customers/{{customer_1_id}}/screenings/{{screening_1_id}}/matches/dismiss",
+				"description": "We confirmed a match in the previous API call, we need to dismiss the other matches."
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Document",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "df59f570-f150-4cbe-bd81-5aac6b0a97c2",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"if (responseCode.code === 200) {",
+							"    var jd = JSON.parse(responseBody);",
+							"    postman.setEnvironmentVariable(\"analysis_c_id\", jd.id);",
+							"}",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessTokenUser}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"document_id\" : \"{{residence_permit_doc_id}}\",\n    \"type\" : \"image\"\n}"
+				},
+				"url": "{{swiftdil_url}}/customers/{{customer_1_id}}/verifications",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Ongoing Due Diligence",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3613366c-6eb2-4e78-b1ec-556e1f5bbb79",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessTokenUser}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"frequency\" : \"WEEKLY\",\n    \"scope\": [\"PEP\", \"WATCHLIST\"],\n    \"enabled\" : true\n}"
+				},
+				"url": "{{swiftdil_url}}/customers/{{customer_1_id}}/odd",
+				"description": "Create Ongoing Due Diligence configuration"
+			},
+			"response": []
+		}
+	]
+}
