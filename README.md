@@ -23,13 +23,13 @@ Setting up an environment allows us to easily use environmental variables, which
 
 **Create customer → Update Customer → Screen Customer → View Risk Profile**.
 
-To make it easier for you, we have created a [Sandbox environment](/colllections/swiftdil-sandbox-postman-environment.json) which can easily be imported. To do so, click on **Environment Options** (cog icon), then click on **Manage Environments**.
+To make it easier for you, we have created a [Sandbox environment](/collections/swiftdil-sandbox-postman-environment.json) which can easily be imported. To do so, click on **Environment Options** (cog icon), then click on **Manage Environments**.
 
 <p align="center">
   <img src="images/new-env-1.png" width="50%" height="70%">
 </p>
 
-Select the **Manage Environments** tab, then click **Import** and select the [Sandbox environment](/colllections/swiftdil-sandbox-postman-environment.json).
+Select the **Manage Environments** tab, then click **Import** and select the [Sandbox environment](/collections/swiftdil-sandbox-postman-environment.json).
 
 <p align="center">
   <img src="images/new-env-2.png" width="50%" height="70%">
